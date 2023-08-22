@@ -1,23 +1,30 @@
-class Datas<S, N, B> {
-  public name: S;
-  protected age: N;
-  gender: S;
-  adult: B;
-  private salary:N
-  constructor(name: S, age: N, gender: S, adult: B) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-    this.adult = adult;
-  }
-}
+// class Datas<S, N, B> {
+//   public name: S;
+//   protected age: N;
+//   gender: S;
+//   adult: B;
+//   private salary:N
+//   constructor(name: S, age: N, gender: S, adult: B) {
+//     this.name = name;
+//     this.age = age;
+//     this.gender = gender;
+//     this.adult = adult;
+//   }
+// }
 
-class Emp<S, N, B> extends Datas<S, N, B> {  //inheritance
-  address: S;
-  constructor(name: S, age: N, gender: S, adult: B, address: S) {
-    // this.salary; can not access the salary because it is privat 
+//---------------------------sorted version
+class Datas<S, N, B> {
+  private salary: N;
+  constructor(
+    public name: S,
+    protected age: N,
+    public gender: S,
+    public adult: B
+  ) {}
+}
+class Emp<S, N, B> extends Datas<S, N, B> {
+  constructor(name: S, age: N, gender: S, adult: B, public address: S) {
     super(name, age, gender, adult);
-    this.address = address;
   }
 }
 
