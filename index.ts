@@ -14,7 +14,7 @@
 
 //---------------------------sorted version
 class Datas<S, N, B> {
-  private salary: N;
+  private salary?: N;
   constructor(
     public name: S,
     protected age: N,
